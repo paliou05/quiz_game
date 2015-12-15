@@ -22,7 +22,11 @@ if __name__ == '__main__':
     questions = printer.find_question()
     for question in questions:
         print question['question']
-        print question['options']
+        list = question['options']
+        print list[0]        
+        print list[1]
+        print list[2]
+        print list[3]
         user_answer = input("Give your answer\n>")
         if user_answer == question['answer']:
             print "Correct"
