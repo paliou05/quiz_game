@@ -16,20 +16,19 @@ class Printer():
         selector = {'_id':1,'question':1, 'answer':1, 'options':1}
         questions = self.db.questions.find(query,selector)
         return questions
-                        
-    def print_question(self,query,selector):
-        ask = self.db.questions.find(query,selector)
-        print ask
-        
-            
+         
 if __name__ == '__main__':
     printer = Printer()
     questions = printer.find_question()
     for question in questions:
-            question_id = question['_id']
-            query = {'_id':question_id}
-            selector = {'question':1, 'options':1,'answer':0}
-            printer.print_question(query,selector)
+        print question['question']
+        print question['options']
+        user_answer = input("Give your answer\n>")
+        if user_answer == question['answer']:
+            print "Correct"
+        else:
+            print "Wrong"
+        
             
     
     
