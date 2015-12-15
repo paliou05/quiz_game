@@ -1,7 +1,6 @@
 import welcome_message
 import pymongo
-import os
-import json
+
 
 class Printer():
     
