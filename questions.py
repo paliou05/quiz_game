@@ -1,3 +1,4 @@
+import welcome_message
 import pymongo
 import os
 import json
@@ -21,17 +22,18 @@ if __name__ == '__main__':
     printer = Printer()
     questions = printer.find_question()
     for question in questions:
-        print question['question']
+        print question['question']+"\n"
         list = question['options']
-        print list[0]        
+        print list[0]
         print list[1]
         print list[2]
         print list[3]
         user_answer = input("Give your answer\n>")
         if user_answer == question['answer']:
-            print "Correct"
+            print "Correct\n"
         else:
-            print "Wrong"
+            print "Wrong\n"
+        print raw_input("For the next question press ENTER\n>")
         
             
     
