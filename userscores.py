@@ -38,7 +38,6 @@ class UserScores():
 if __name__ == "__main__":
     userscores = UserScores()
     username = userscores.get_username()
-    print username
     score = randint(10,50)   #for the test(must remove after and take the score from questions.py)
     #userscores.import_userdb(username,score)  #maybe check for same username?
     query = {}
@@ -46,5 +45,7 @@ if __name__ == "__main__":
     all_users = userscores.find_users()
     users = [user for user in all_users]
     user = sorted(users, reverse=True)
-    print user
+    for i in user:
+        print i['username'],"\tscore:",i['score']
+    
     
