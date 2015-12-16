@@ -13,3 +13,5 @@ class UserScores():
     
     score = 0
     username = input("Give your username:\n>")
+    #self.db.users.insert({'username':username},{'score':score})
+    

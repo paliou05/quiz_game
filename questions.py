@@ -3,6 +3,7 @@ import pymongo
 
 
 class Printer():
+
     
     def __init__(self):
         self.db = self.connect_to_db('test')
@@ -18,6 +19,10 @@ class Printer():
         return questions
          
 if __name__ == '__main__':
+    correct = 0
+    wrong = 0
+    score = 0
+    average = 0
     printer = Printer()
     questions = printer.find_question()
     for question in questions:
@@ -30,10 +35,17 @@ if __name__ == '__main__':
         user_answer = input("Give your answer\n>")
         if user_answer == question['answer']:
             print "Correct\n"
+            correct = correct + 1
+            score = score + 10
         else:
             print "Wrong\n"
+            wrong = wrong + 1
         print raw_input("For the next question press ENTER\n>")
-        
+    average = correct/float(correct+wrong)
+    print "Your score:",score
+    print "You have %d correct answers" %correct
+    print wrong
+    print "Your average:%f" %average
             
     
     
