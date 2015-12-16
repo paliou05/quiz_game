@@ -22,7 +22,7 @@ class UserScores():
         all_users = self.db.users.find(query,selector)
         return all_users
     
-    def primt2txt(self,all_users):
+    def print2txt(self,all_users):
         """SORT DESCEDING"""
         
     def print_userscores():
@@ -31,6 +31,7 @@ class UserScores():
 
 """1)add main.py
    2)add choice of game(5,10,15,20?)
-   3)add the questions"""
+   3)add the questions
+   4)check if they work all together"""
     
         
