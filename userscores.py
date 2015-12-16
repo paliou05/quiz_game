@@ -27,7 +27,9 @@ class UserScores():
         
     def print_userscores():
         """print on screen from txt"""
-
+    #def read_list(list_name):      maybe use it for iteration in my list
+       #for i in list_name:         to fix my print output
+          #print i
 
 """1)add main.py
    2)add choice of game(5,10,15,20?)
