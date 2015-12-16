@@ -1,6 +1,6 @@
 import pymongo
 import os
-
+from random import randint
 
 class UserScores():
     
@@ -16,7 +16,7 @@ class UserScores():
         return username
     
     def import_userdb(self,username,score):    
-        self.db.users.insert({'username':username},{'score':score})
+        self.db.users.insert({'username':username ,'score':score})
     
     def find_users(self):
         all_users = self.db.users.find(query,selector)
@@ -33,5 +33,16 @@ class UserScores():
    2)add choice of game(5,10,15,20?)
    3)add the questions
    4)check if they work all together"""
+if __name__ == "__main__":
+    userscores = UserScores()
+    username = userscores.get_username()
+    print username
+    score = randint(10,50)   #for the test(must remove after and take the score from questions.py)
+    #userscores.import_userdb(username,score)  #maybe check for same username?
+    query = {}
+    selector = {'username':1 , 'score':1 , "_id":0}
+    all_users = userscores.find_users()
+    users = [user for user in all_users]
+    user = sorted(users, reverse=True)
+    print user
     
-        
