@@ -18,7 +18,7 @@ class UserScores():
     def import_userdb(self,username,score):    
         self.db.users.insert({'username':username ,'score':score})
     
-    def find_users(self):
+    def find_users(self,query,selector):
         all_users = self.db.users.find(query,selector)
         return all_users
     
@@ -35,7 +35,7 @@ class UserScores():
    2)add choice of game(5,10,15,20?)
    3)add the questions
    4)check if they work all together"""
-if __name__ == "__main__":
+"""if __name__ == "__main__":
     userscores = UserScores()
     username = userscores.get_username()
     score = randint(10,50)   #for the test(must remove after and take the score from questions.py)
@@ -46,6 +46,6 @@ if __name__ == "__main__":
     users = [user for user in all_users]
     user = sorted(users, reverse=True)
     for i in user:
-        print i['username'],"\tscore:",i['score']
+        print i['username'],"\tscore:",i['score']"""
     
     

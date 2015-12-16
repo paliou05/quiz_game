@@ -1,23 +1,9 @@
+import welcome_message
 import pymongo
+from questions import Printer
+from userscores import UserScores
 
-
-class Printer():
-
-    
-    def __init__(self):
-        self.db = self.connect_to_db('test')
-        
-    def connect_to_db(self,db_name):
-        client = pymongo.MongoClient()
-        return client[db_name]
-    
-    def find_question(self):
-        query = {}
-        selector = {'_id':1,'question':1, 'answer':1, 'options':1}
-        questions = self.db.questions.find(query,selector)
-        return questions
-         
-"""if __name__ == '__main__':
+if __name__ == "__main__":
     correct = 0
     wrong = 0
     score = 0
@@ -43,10 +29,16 @@ class Printer():
     average = (correct/float(correct+wrong))*100
     print "Your score:",score
     print "You have %d correct answers" %correct
-    print "Your average:%d" %average+"%"    """
-            
-    
-    
-    
-
+    print "Your average:%d" %average+"%"
+    userscores = UserScores()
+    username = userscores.get_username()
+    #score = randint(10,50)   #for the test(must remove after and take the score from questions.py)
+    userscores.import_userdb(username,score)  #maybe check for same username?
+    query = {}
+    selector = {'username':1 , 'score':1 , "_id":0}
+    all_users = userscores.find_users(query,selector)
+    users = [user for user in all_users]
+    user = sorted(users, reverse=True)
+    for i in user:
+        print i['username'],"\tscore:",i['score']
     
