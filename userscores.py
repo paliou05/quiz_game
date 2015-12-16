@@ -22,13 +22,15 @@ class UserScores():
         all_users = self.db.users.find(query,selector)
         return all_users
     
-    def print_userscores():
+    def primt2txt(self,all_users):
         """SORT DESCEDING"""
+        
+    def print_userscores():
+        """print on screen from txt"""
 
 
 """1)add main.py
    2)add choice of game(5,10,15,20?)
-   3)print users and scores to txt?
-   4)add the questions"""
+   3)add the questions"""
     
         
