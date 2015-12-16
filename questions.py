@@ -1,4 +1,3 @@
-import welcome_message
 import pymongo
 
 
@@ -41,10 +40,10 @@ if __name__ == '__main__':
             print "Wrong\n"
             wrong = wrong + 1
         print raw_input("For the next question press ENTER\n>")
-    average = correct/float(correct+wrong)
+    average = (correct/float(correct+wrong))*100
     print "Your score:",score
     print "You have %d correct answers" %correct
-    print "Your average:%f" %average
+    print "Your average:%d" %average+"%"
             
     
     
