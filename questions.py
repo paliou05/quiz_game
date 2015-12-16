@@ -44,7 +44,6 @@ if __name__ == '__main__':
     average = correct/float(correct+wrong)
     print "Your score:",score
     print "You have %d correct answers" %correct
-    print wrong
     print "Your average:%f" %average
             
     
