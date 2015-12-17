@@ -30,6 +30,7 @@ if __name__ == "__main__":
             score = (score + 50)-(seconds*2)
         else:
             print "Wrong\n"
+            print "The correct answer is:", question['answer']
             wrong = wrong + 1
             score = score - (seconds*2)
         print raw_input("For the next question press ENTER\n>")
