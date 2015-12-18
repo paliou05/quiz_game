@@ -1,7 +1,7 @@
 import pymongo
 
 
-class Printer():
+class QuestionPrinter():
 
     
     def __init__(self):

@@ -7,7 +7,7 @@ import sys
 
 if sys.version_info[0] < 3:
     input = raw_input
-class SecondCounter(object):
+class TimeCounter(object):
     def __init__(self):
         self.start_time = None
     def start(self):

@@ -1,8 +1,8 @@
 import welcome_message
 import pymongo
-from questions import Printer
+from questions import QuestionPrinter
 from userscores import UserScores
-from count_seconds import SecondCounter
+from count_seconds import TimeCounter
 
 
 if __name__ == "__main__":
@@ -10,19 +10,17 @@ if __name__ == "__main__":
     wrong = 0
     score = 0
     average = 0
-    count = SecondCounter()
-    printer = Printer()
-    questions = printer.find_question()
+    timer = TimeCounter()
+    question_printer = QuestionPrinter()
+    questions = question_printer.find_question()
     for question in questions:
-        count.start()
+        timer.start()
         print question['question']+"\n"
-        list = question['options']
-        print list[0]
-        print list[1]
-        print list[2]
-        print list[3]
+        options_list = question['options']
+        for option in options_list:
+            print option
         user_answer = input("Give your answer\n>")
-        seconds = count.finish()
+        seconds = timer.finish()
         print("You took {} seconds to answer the question".format(seconds))
         if user_answer == question['answer']:
             print "Correct\n"
