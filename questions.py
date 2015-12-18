@@ -11,10 +11,10 @@ class QuestionPrinter():
         client = pymongo.MongoClient()
         return client[db_name]
     
-    def find_question(self):
+    def find_question(self,number_of_questions):
         query = {}
         selector = {'_id':1,'question':1, 'answer':1, 'options':1}
-        questions = self.db.questions.find(query,selector)
+        questions = self.db.questions.find(query,selector).limit(number_of_questions)
         return questions
          
 """if __name__ == '__main__':

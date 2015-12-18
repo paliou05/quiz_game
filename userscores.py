@@ -15,7 +15,7 @@ class UserScores():
         username = input("Give your username:\n>")
         return username
     
-    def import_userdb(self,username,score):    
+    def insert_user_to_db(self,username,score):    
         self.db.users.insert({'username':username ,'score':score})
     
     def find_users(self,query,selector):

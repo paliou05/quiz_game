@@ -12,7 +12,8 @@ if __name__ == "__main__":
     average = 0
     timer = TimeCounter()
     question_printer = QuestionPrinter()
-    questions = question_printer.find_question()
+    number_of_questions = input("Choose game:2,5,8,12\n>")
+    questions = question_printer.find_question(number_of_questions)
     for question in questions:
         timer.start()
         print question['question']+"\n"
@@ -39,7 +40,7 @@ if __name__ == "__main__":
     userscores = UserScores()
     username = userscores.get_username()
     #score = randint(10,50)   #for the test(must remove after and take the score from questions.py)
-    userscores.import_userdb(username,score)  #maybe check for same username?
+    userscores.insert_user_to_db(username,score)  #maybe check for same username?
     query = {}
     selector = {'username':1 , 'score':1 , "_id":0}
     all_users = userscores.find_users(query,selector)
