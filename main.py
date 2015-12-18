@@ -33,7 +33,7 @@ if __name__ == "__main__":
             print "The correct answer is:", question['answer']
             wrong = wrong + 1
             score = score - (seconds*2)
-        print raw_input("For the next question press ENTER\n>")
+        print raw_input("To continue press ENTER\n>")
     average = (correct/float(correct+wrong))*100
     print "Your score:",score
     print "You have %d correct answers" %correct

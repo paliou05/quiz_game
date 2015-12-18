@@ -22,10 +22,10 @@ class UserScores():
         all_users = self.db.users.find(query,selector)
         return all_users
     
-    def print2txt(self,all_users):
+    def print2txt(self,all_users): #didnt used it yet
         """SORT DESCEDING"""
         
-    def print_userscores():
+    def print_userscores():  #could use it if i wanted to print them to a txt
         """print on screen from txt"""
     #def read_list(list_name):      maybe use it for iteration in my list
        #for i in list_name:         to fix my print output
